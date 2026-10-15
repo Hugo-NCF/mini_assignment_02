@@ -1,0 +1,163 @@
+
+/* Starter stylesheet for your personal page */
+
+/* TODO 1: Set box-sizing to border-box for all elements */
+* {
+    box-sizing: border-box;
+}
+
+/* TODO 2: Style the body with font, size, spacing, and colors */
+body {
+    font-family: Arial, sans-serif;
+    font-size: 16px;
+    line-height: 1.6;
+    color: #ffffff;
+    background-color: #181818;
+    margin: 0;
+    padding: 0;
+}
+
+/* Style the main header */
+header {
+    text-align: center;
+    background-color: #242424;
+    padding: 30px;
+}
+
+/* Style the main heading */
+h1 {
+    color: #ff4b4b;
+    font-size: 36px;
+}
+
+/* Style the anime images */
+img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 8px;
+}
+
+/* Style the navigation bar */
+nav {
+    background-color: #303030;
+    padding: 15px;
+}
+
+/* TODO 3: Use flexbox and gap for the navigation links */
+nav ul {
+    display: flex;
+    justify-content: center;
+    gap: 25px;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+/* Style the navigation links */
+nav a {
+    color: #ffffff;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+/* Change the link color when hovering */
+nav a:hover {
+    color: #ff4b4b;
+}
+
+/* Style the main content area */
+main {
+    max-width: 1000px;
+    margin: 30px auto;
+    padding: 20px;
+}
+
+/* TODO 4: Add padding, border, and margin to each section */
+section {
+    padding: 25px;
+    border: 2px solid #444444;
+    margin-bottom: 25px;
+    background-color: #242424;
+    border-radius: 8px;
+}
+
+/* Style the section headings */
+h2 {
+    color: #ff4b4b;
+}
+
+/* Style the tables */
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+}
+
+/* Style the table headers and cells */
+th, td {
+    border: 1px solid #555555;
+    padding: 12px;
+    text-align: left;
+}
+
+/* Style the table headers */
+th {
+    background-color: #383838;
+}
+
+/* Style the table captions */
+caption {
+    padding: 10px;
+    font-weight: bold;
+}
+
+/* Style the Naruto form */
+form {
+    margin-top: 20px;
+}
+
+/* Style the form input */
+input {
+    padding: 10px;
+    margin: 10px 0;
+}
+
+/* Style the submit button */
+input[type="submit"] {
+    background-color: #ff4b4b;
+    color: #ffffff;
+    border: none;
+    cursor: pointer;
+}
+
+/* Style the footer */
+footer {
+    text-align: center;
+    background-color: #242424;
+    padding: 20px;
+}
+
+/* Style the footer link */
+footer a {
+    color: #ff4b4b;
+}
+
+/* TODO 5: Stack navigation links vertically on smaller screens */
+@media (max-width: 700px) {
+    nav ul {
+        flex-direction: column;
+        align-items: center;
+        gap: 10px;
+    }
+
+    /* Make the main content fit smaller screens */
+    main {
+        margin: 10px;
+        padding: 10px;
+    }
+
+    /* Reduce heading size on phones */
+    h1 {
+        font-size: 28px;
+    }
+}
