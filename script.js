@@ -5,14 +5,14 @@
 
 // create an array of anime character objects
 const characters = [
-    { name: "Goku", series: "Dragon Ball" },
-    { name: "Vegeta", series: "Dragon Ball" },
-    { name: "Naruto", series: "Naruto" },
-    { name: "Sasuke", series: "Naruto" },
-    { name: "Luffy", series: "One Piece" },
-    { name: "Zoro", series: "One Piece" },
-    { name: "Ichigo", series: "Bleach" },
-    { name: "Rukia", series: "Bleach" }
+    { name: "Goku", series: "Dragon Ball", image: "images/Goku.webp" },
+    { name: "Vegeta", series: "Dragon Ball", image: "images/Vegeta.webp" },
+    { name: "Naruto", series: "Naruto", image: "images/Naruto.webp" },
+    { name: "Sasuke", series: "Naruto", image: "images/Sasuke.webp" },
+    { name: "Luffy", series: "One Piece", image: "images/Luffy.png" },
+    { name: "Zoro", series: "One Piece", image: "images/Zoro.webp" },
+    { name: "Ichigo", series: "Bleach", image: "images/Ichigo.webp" },
+    { name: "Rukia", series: "Bleach", image: "images/Rukia.webp" }
   ];
   // End of the characters array.
   
@@ -94,6 +94,16 @@ const characters = [
   
       // give the card a CSS class
       card.className = "market-card";
+
+      // create an image for the character
+      const image = document.createElement("img");
+
+      // set the image source and alt text
+      image.src = character.image;
+      image.alt = character.name;
+
+      // add the image to the card
+      card.appendChild(image);
   
       // create a heading for the character name
       const name = document.createElement("h3");

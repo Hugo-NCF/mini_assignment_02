@@ -263,4 +263,27 @@ footer a {
     .card-row {
         flex-direction: column;
     }
+
+    /* Style the character images */
+.market-card img {
+    width: 150px;
+    height: 150px;
+    object-fit: contain;
+    display: block;
+    margin: 0 auto 15px;
+    border-radius: 8px;
+}
+
+/* Improve the layout on small screens */
+@media (max-width: 400px) {
+    .market-card {
+        width: 100%;
+    }
+
+    #character-search,
+    #series-filter {
+        width: 100%;
+        margin: 10px 0;
+    }
+}
 }
