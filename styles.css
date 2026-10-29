@@ -1,6 +1,30 @@
 
 /* Starter stylesheet for your personal page */
 
+/* Define the colors for light mode */
+:root {
+    --background-color: #f5f5f5;
+    --text-color: #181818;
+    --section-color: #ffffff;
+    --header-color: #e8e8e8;
+    --nav-color: #303030;
+    --border-color: #999999;
+    --accent-color: #b42332;
+    --card-color: #eeeeee;
+}
+
+/* Define the colors for dark mode */
+body.dark-mode {
+    --background-color: #181818;
+    --text-color: #ffffff;
+    --section-color: #242424;
+    --header-color: #242424;
+    --nav-color: #303030;
+    --border-color: #666666;
+    --accent-color: #ff6b6b;
+    --card-color: #303030;
+}
+
 /* TODO 1: Set box-sizing to border-box for all elements */
 * {
     box-sizing: border-box;
@@ -11,8 +35,8 @@ body {
     font-family: Arial, sans-serif;
     font-size: 16px;
     line-height: 1.6;
-    color: #ffffff;
-    background-color: #181818;
+    color: var(--text-color);
+    background-color: var(--background-color);
     margin: 0;
     padding: 0;
 }
@@ -20,13 +44,13 @@ body {
 /* Style the main header */
 header {
     text-align: center;
-    background-color: #242424;
+    background-color: var(--header-color);
     padding: 30px;
 }
 
 /* Style the main heading */
 h1 {
-    color: #ff4b4b;
+    color: var(--accent-color);
     font-size: 36px;
 }
 
@@ -37,9 +61,27 @@ img {
     border-radius: 8px;
 }
 
+/* Style the dark mode button */
+#theme-toggle {
+    display: block;
+    margin: 15px auto;
+    padding: 10px 20px;
+    background-color: var(--accent-color);
+    color: #ffffff;
+    border: 2px solid var(--accent-color);
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 16px;
+}
+
+/* Style the dark mode button in dark mode */
+body.dark-mode #theme-toggle {
+    color: #181818;
+}
+
 /* Style the navigation bar */
 nav {
-    background-color: #303030;
+    background-color: var(--nav-color);
     padding: 15px;
 }
 
@@ -47,6 +89,7 @@ nav {
 nav ul {
     display: flex;
     justify-content: center;
+    flex-wrap: wrap;
     gap: 25px;
     list-style: none;
     padding: 0;
@@ -62,7 +105,7 @@ nav a {
 
 /* Change the link color when hovering */
 nav a:hover {
-    color: #ff4b4b;
+    color: #ff8585;
 }
 
 /* Style the main content area */
@@ -75,15 +118,15 @@ main {
 /* TODO 4: Add padding, border, and margin to each section */
 section {
     padding: 25px;
-    border: 2px solid #444444;
+    border: 2px solid var(--border-color);
     margin-bottom: 25px;
-    background-color: #242424;
+    background-color: var(--section-color);
     border-radius: 8px;
 }
 
 /* Style the section headings */
 h2 {
-    color: #ff4b4b;
+    color: var(--accent-color);
 }
 
 /* Style the tables */
@@ -95,20 +138,64 @@ table {
 
 /* Style the table headers and cells */
 th, td {
-    border: 1px solid #555555;
+    border: 1px solid var(--border-color);
     padding: 12px;
     text-align: left;
 }
 
 /* Style the table headers */
 th {
-    background-color: #383838;
+    background-color: var(--card-color);
 }
 
 /* Style the table captions */
 caption {
     padding: 10px;
     font-weight: bold;
+}
+
+/* Style the character explorer inputs */
+#character-search,
+#series-filter {
+    padding: 10px;
+    margin: 10px;
+    max-width: 100%;
+    border: 1px solid #777777;
+    border-radius: 6px;
+    background-color: #ffffff;
+    color: #181818;
+}
+
+/* Lay the anime character cards out in rows */
+.card-row {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 15px;
+    margin-top: 20px;
+}
+
+/* Style each anime character card */
+.market-card {
+    flex: 1 1 190px;
+    padding: 20px;
+    background-color: var(--card-color);
+    border: 2px solid var(--border-color);
+    border-radius: 12px;
+    text-align: center;
+}
+
+/* Style the character names */
+.market-card h3 {
+    color: var(--accent-color);
+    font-size: 24px;
+    margin: 5px 0;
+}
+
+/* Style the character anime series */
+.market-card p {
+    color: var(--text-color);
+    font-size: 16px;
+    margin: 5px 0;
 }
 
 /* Style the Naruto form */
@@ -124,22 +211,33 @@ input {
 
 /* Style the submit button */
 input[type="submit"] {
-    background-color: #ff4b4b;
+    background-color: var(--accent-color);
     color: #ffffff;
     border: none;
     cursor: pointer;
 }
 
+/* Style the submit button in dark mode */
+body.dark-mode input[type="submit"] {
+    color: #181818;
+}
+
+/* Style the form feedback */
+#form-summary {
+    font-weight: bold;
+    color: var(--text-color);
+}
+
 /* Style the footer */
 footer {
     text-align: center;
-    background-color: #242424;
+    background-color: var(--header-color);
     padding: 20px;
 }
 
 /* Style the footer link */
 footer a {
-    color: #ff4b4b;
+    color: var(--accent-color);
 }
 
 /* TODO 5: Stack navigation links vertically on smaller screens */
@@ -159,5 +257,10 @@ footer a {
     /* Reduce heading size on phones */
     h1 {
         font-size: 28px;
+    }
+
+    /* Stack character cards on smaller screens */
+    .card-row {
+        flex-direction: column;
     }
 }

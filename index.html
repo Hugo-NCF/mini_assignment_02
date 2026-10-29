@@ -14,6 +14,8 @@
   <!-- Text shown on the browser tab -->
   <link rel="stylesheet" href="styles.css">
   <!-- Connects your stylesheet -->
+  <script src="script.js" defer></script>
+  <!-- Connects the external JavaScript file -->
 </head>
 <!-- End of head -->
 
@@ -24,6 +26,9 @@
     <!-- Main heading and introduction -->
     <h1>Hugo Cruz | The Big Four</h1>
     <p>I am a Computer Science Major who loves Soccer &amp; Anime and here's my website about the Big Four in Anime.</p>
+
+    <!-- Button for switching between light and dark mode -->
+    <button id="theme-toggle" type="button">Dark Mode</button>
 
     <!-- Main anime image -->
     <img src="https://i.pinimg.com/736x/29/8f/85/298f851d4473d6d8bbedc993a5cbe0b2.jpg"
@@ -37,6 +42,7 @@
     <!-- Navigation links to sections on this page -->
     <ul>
       <li><a href="#about">About</a></li>
+      <li><a href="#character-explorer">Character Explorer</a></li>
       <li><a href="#dragon-ball">Dragon Ball</a></li>
       <li><a href="#naruto">Naruto</a></li>
       <li><a href="#one-piece">One Piece</a></li>
@@ -61,6 +67,35 @@
       </ul>
     </section>
     <!-- End of about section -->
+
+    <section id="character-explorer">
+      <!-- Section for searching characters from the Big Four -->
+      <h2>Anime Character Explorer</h2>
+      <p>Search for characters from Dragon Ball, Naruto, One Piece, and Bleach.</p>
+
+      <!-- Search input used to filter anime characters -->
+      <label for="character-search">Search Characters:</label>
+      <input type="text"
+             id="character-search"
+             placeholder="Enter a character name...">
+
+      <!-- Dropdown for filtering characters by anime series -->
+      <label for="series-filter">Anime Series:</label>
+      <select id="series-filter">
+        <option value="All">All Series</option>
+        <option value="Dragon Ball">Dragon Ball</option>
+        <option value="Naruto">Naruto</option>
+        <option value="One Piece">One Piece</option>
+        <option value="Bleach">Bleach</option>
+      </select>
+
+      <!-- Paragraph showing the number of matching characters -->
+      <p id="character-count" aria-live="polite">Showing 0 of 8 characters.</p>
+
+      <!-- Container where JavaScript creates character cards -->
+      <div id="character-list" class="card-row"></div>
+    </section>
+    <!-- End of character explorer section -->
 
     <section id="dragon-ball">
       <!-- Dragon Ball section -->
@@ -106,17 +141,21 @@
       <p>Naruto is a popular anime series that follows the journey of Naruto Uzumaki, a young ninja with dreams of becoming the strongest ninja in his village.</p>
 
       <!-- Naruto image -->
-      <img src="https://upload.wikimedia.org/wikipedia/en/9/94/NarutoCoverTankobon1.jpg?utm_source=en.wikipedia.org&utm_campaign=index&utm_content=original"
-           alt="Naruto Uzumaki"
+      <img src="https://upload.wikimedia.org/wikipedia/en/9/94/NarutoCoverTankobon1.jpg?utm_source=en.wikipedia.org&amp;utm_campaign=index&amp;utm_content=original"
+           alt="Naruto manga cover"
            width="400"
            height="300">
 
       <!-- Favorite Naruto character form -->
-      <form>
+      <form id="character-form">
+        <!-- Label for the favorite character input -->
         <label for="favoriteCharacter">Who is your favorite Naruto character?</label>
         <input type="text" id="favoriteCharacter" name="favoriteCharacter">
         <input type="submit" value="Submit">
       </form>
+
+      <!-- Paragraph showing the form validation message -->
+      <p id="form-summary" aria-live="polite"></p>
     </section>
     <!-- End of Naruto section -->
 
@@ -126,8 +165,8 @@
       <p>One Piece is a popular anime series that follows the adventures of Monkey D. Luffy and his crew as they search for the legendary treasure known as One Piece.</p>
 
       <!-- One Piece image -->
-      <img src="https://upload.wikimedia.org/wikipedia/en/9/90/One_Piece%2C_Volume_61_Cover_%28Japanese%29.jpg?utm_source=en.wikipedia.org&utm_campaign=index&utm_content=original"
-           alt="One Piece logo"
+      <img src="https://upload.wikimedia.org/wikipedia/en/9/90/One_Piece%2C_Volume_61_Cover_%28Japanese%29.jpg?utm_source=en.wikipedia.org&amp;utm_campaign=index&amp;utm_content=original"
+           alt="One Piece manga cover"
            width="400"
            height="300">
 
@@ -149,7 +188,7 @@
       <p>Bleach is a popular anime series that follows the adventures of Ichigo Kurosaki, a teenager who gains the powers of a Soul Reaper and must protect the living world from evil spirits.</p>
 
       <!-- Bleach image -->
-      <img src="https://upload.wikimedia.org/wikipedia/en/3/3f/Bleach_%28manga%29_1.png?utm_source=en.wikipedia.org&utm_campaign=index&utm_content=original"
+      <img src="https://upload.wikimedia.org/wikipedia/en/3/3f/Bleach_%28manga%29_1.png?utm_source=en.wikipedia.org&amp;utm_campaign=index&amp;utm_content=original"
            alt="Bleach manga cover"
            width="400"
            height="300">
